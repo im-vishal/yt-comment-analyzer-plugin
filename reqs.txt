@@ -1,0 +1,17 @@
+jupyter
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+dvc[all]
+nltk
+wordcloud
+mlflow
+dagshub
+boto3
+awscli
+imbalanced-learn
+optuna
+xgboost
+lightgbm

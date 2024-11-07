@@ -1,12 +1,21 @@
 # Use an official Python image as the base
-FROM python:3.12-slim
+FROM python:3.10-slim
 
-# Create a non-root user and set up home directory
+# Set up a non-root user
 RUN useradd -m myuser
 
-# Switch to the non-root user
+# Switch to root user to install system dependencies
+USER root
+
+# Install dependencies, including libgomp for LightGBM
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git libgomp1 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Switch back to non-root user
 USER myuser
 
+# Set the working directory
 WORKDIR /workspaces
 
 COPY . .
