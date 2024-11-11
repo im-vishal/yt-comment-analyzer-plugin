@@ -109,8 +109,8 @@ def main():
         max_depth = params['model_building']['max_depth']
         n_estimators = params['model_building']['n_estimators']
 
-        # Load the preprocessed training data from the interim directory
-        train_data = load_data(os.path.join(root_dir, 'data/interim/train_processed.csv'))
+        # Load the preprocessed training data from the processed directory
+        train_data = load_data(os.path.join(root_dir, 'data/processed/train_processed.csv'))
 
         # Apply TF-IDF feature engineering on training data
         X_train_tfidf, y_train = apply_tfidf(train_data, max_features, ngram_range)

@@ -59,7 +59,7 @@ def load_params(params_path: str) -> dict:
         raise CustomException(e)
 
 
-def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray):
+def evaluate_model(model, X_test, y_test):
     """Evaluate the model and log classification metrics and confusion matrix."""
     try:
         # Predict and calculate classification metrics
@@ -137,7 +137,7 @@ def main():
             vectorizer = load_vectorizer(os.path.join(root_dir, 'tfidf_vectorizer.pkl'))
 
             # Load test data for signature inference
-            test_data = load_data(os.path.join(root_dir, 'data/interim/test_processed.csv'))
+            test_data = load_data(os.path.join(root_dir, 'data/processed/test_processed.csv'))
 
             # Prepare test data
             X_test_tfidf = vectorizer.transform(test_data['clean_comment'].values)

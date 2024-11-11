@@ -57,16 +57,16 @@ def normalize_text(df):
 def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str) -> None:
     """Save the processed train and test datasets."""
     try:
-        interim_data_path = os.path.join(data_path, 'interim')
-        logger.debug(f"Creating directory {interim_data_path}")
+        processed_data_path = os.path.join(data_path, 'processed')
+        logger.debug(f"Creating directory {processed_data_path}")
         
-        os.makedirs(interim_data_path, exist_ok=True)  # Ensure the directory is created
-        logger.debug(f"Directory {interim_data_path} created or already exists")
+        os.makedirs(processed_data_path, exist_ok=True)  # Ensure the directory is created
+        logger.debug(f"Directory {processed_data_path} created or already exists")
 
-        train_data.to_csv(os.path.join(interim_data_path, "train_processed.csv"), index=False)
-        test_data.to_csv(os.path.join(interim_data_path, "test_processed.csv"), index=False)
+        train_data.to_csv(os.path.join(processed_data_path, "train_processed.csv"), index=False)
+        test_data.to_csv(os.path.join(processed_data_path, "test_processed.csv"), index=False)
         
-        logger.debug(f"Processed data saved to {interim_data_path}")
+        logger.debug(f"Processed data saved to {processed_data_path}")
     except Exception as e:
         raise CustomException(e)
 
