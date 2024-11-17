@@ -177,7 +177,7 @@ def main():
                     })
 
             # Log confusion matrix
-            log_confusion_matrix(cm, "Test Data")
+            log_confusion_matrix(cm, "Test_Data")
 
             # Add important tags
             mlflow.set_tag("model_type", "LightGBM")
