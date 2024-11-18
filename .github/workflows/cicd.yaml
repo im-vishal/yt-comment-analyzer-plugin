@@ -99,7 +99,19 @@ jobs:
         env:
           DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
         run: |
-          nohup python flask_app/app.py &
+          nohup python flask_app/app.py > flask_app.log 2>&1 &
+          for i in {1..10}; do
+            if nc -z localhost 5000; then
+              echo "Flask app is ready!"
+              break
+            fi
+            echo "Waiting for Flask app to be ready..."
+            sleep 2
+          done
+          if ! nc -z localhost 5000; then
+            echo "Flask app failed to start."
+            exit 1
+          fi
 
       - name: Run Flask API tests
         run: |
