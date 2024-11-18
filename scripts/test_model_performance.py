@@ -21,7 +21,7 @@ repo_name = 'yt-comment-analyzer-plugin'
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 
 @pytest.mark.parametrize("model_name, stage, holdout_data_path, vectorizer_path", [
-    ("yt_chrome_plugin_model", "staging", "data/interim/test_processed.csv", "tfidf_vectorizer.pkl"),  # Replace with your actual paths
+    ("yt_chrome_plugin_model", "staging", "data/processed/test_processed.csv", "tfidf_vectorizer.pkl"),  # Replace with your actual paths
 ])
 def test_model_performance(model_name, stage, holdout_data_path, vectorizer_path):
     try:
