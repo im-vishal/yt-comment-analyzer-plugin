@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - ci-test-1
     paths-ignore:
       - 'README.md'
 
