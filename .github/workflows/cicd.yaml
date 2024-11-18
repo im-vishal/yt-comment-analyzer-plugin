@@ -60,7 +60,7 @@ jobs:
           git commit -m "Automated commit of DVC outputs & updated code" || echo "No changes to commit"
 
       - name: Push changes
-        if: ${{ gitub.actor != 'github-actions[bot]' }}
+        if: ${{ github.actor != 'github-actions[bot]' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
