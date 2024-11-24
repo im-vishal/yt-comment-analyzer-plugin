@@ -94,7 +94,7 @@ The model pipeline is organized using **DVC** with the following stages:
 Special thanks to **Reddit** for the dataset and **DVC**, **MLflow**, **Optuna**, and **AWS** for providing the tools used to make this project possible.
 
 ## Project deployed on AWS EC2 Instance using CodeDeploy
-https://github.com/user-attachments/assets/f78f35b5-8431-43ae-bda7-686d01c5f820
+![Deployment Image](./deployment-img.png)
 
 ## Other CMDs
 - pipreqs . --force
