@@ -92,3 +92,9 @@ The model pipeline is organized using **DVC** with the following stages:
 - **Advanced Visualizations:** Explore more detailed graphical representations of sentiment trends.
 ## Acknowledgements
 Special thanks to **Reddit** for the dataset and **DVC**, **MLflow**, **Optuna**, and **AWS** for providing the tools used to make this project possible.
+
+## Other CMDs
+- pipreqs . --force
+- docker build -t virtualvishal/yt-comment-analysis .
+- docker run -p 8888:5000 -e DAGSHUB_PAT=c52d45d06347759d028fabbb3cc57e53cf6d5a33 virtualvishal/yt-comment-analysis
+- 
