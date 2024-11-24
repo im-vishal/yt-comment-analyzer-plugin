@@ -20,6 +20,6 @@ if [ "$(docker ps -aq -f name=yt-app)" ]; then
 fi
 
 echo "Starting new container..."
-docker run -d -p 80:5000 --name yt-app 823558662715.dkr.ecr.ap-south-1.amazonaws.com/yt-chrome-plugin:latest
+docker run -d -p 80:5000 -e DAGSHUB_PAT=c52d45d06347759d028fabbb3cc57e53cf6d5a33 --name yt-app 823558662715.dkr.ecr.ap-south-1.amazonaws.com/yt-chrome-plugin:latest
 
 echo "Container started successfully."
